@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+
+.card{
+    @apply w-card h-card duration-200 transform border-2 rounded-md cursor-pointer;
+    @apply hover:shadow-lg hover:-translate-y-3 hover:scale-105
+}
+
+.input{
+    @apply focus:ring-2 rounded-sm focus:ring-opacity-30 focus:ring-variant focus:outline-none w-full p-1 border
+}
+@tailwind utilities;
