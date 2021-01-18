@@ -2,18 +2,14 @@
   "name": "eui-id-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/eui-id-generator",
   "scripts": {
     "dev": "next dev",
     "prebuild": "yarn run purge:css",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "build:css": "postcss styles/tailwind.css -o styles/globals.css",
     "watch:css": "postcss styles/tailwind.css -o styles/globals.css -w",
-    "purge:css": "cross-env NODE_ENV=production yarn run build:css",
-    "predeploy": "yarn run export",
-    "deploy": "gh-pages -d out"
+    "purge:css": "cross-env NODE_ENV=production yarn run build:css"
   },
   "dependencies": {
     "cross-env": "^7.0.3",

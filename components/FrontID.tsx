@@ -11,7 +11,7 @@ export const FrontID = ({ details }: { details: StudentDetails }) => (
         details.full ? " bg-transparent" : " bg-pink-400"
       } w-8 h-full ml-1 duration-300`}
     >
-      <img src="/logo.png" alt="logo" className="w-10/12 mx-auto mt-3" />
+      <img src="./logo.png" alt="logo" className="w-10/12 mx-auto mt-3" />
     </div>
 
     <div className="z-50 flex-1 text-xs font-bold">

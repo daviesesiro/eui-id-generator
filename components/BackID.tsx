@@ -25,11 +25,11 @@ export const BackID = () => (
 );
 const Barcode = () => (
   <div className="h-11 flex justify-center">
-    <img src="/barcode.svg" alt="barcode" className="h-11" />
-    <img src="/barcode.svg" alt="barcode" className="h-11" />
-    <img src="/barcode.svg" alt="barcode" className="h-11" />
-    <img src="/barcode.svg" alt="barcode" className="h-11" />
-    <img src="/barcode.svg" alt="barcode" className="h-11" />
-    <img src="/barcode.svg" alt="barcode" className="h-11" />
+    <img src="./barcode.svg" alt="barcode" className="h-11" />
+    <img src="./barcode.svg" alt="barcode" className="h-11" />
+    <img src="./barcode.svg" alt="barcode" className="h-11" />
+    <img src="./barcode.svg" alt="barcode" className="h-11" />
+    <img src="./barcode.svg" alt="barcode" className="h-11" />
+    <img src="./barcode.svg" alt="barcode" className="h-11" />
   </div>
 );

@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Quickly generate edo university ID card"
         />
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
       </Head>
       <Component {...pageProps} />
     </>
