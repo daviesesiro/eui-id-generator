@@ -4,7 +4,7 @@ export const FrontID = ({ details }: { details: StudentDetails }) => (
       backgroundImage: `url(/logo-op-15.png)`,
     }}
     id="front"
-    className="card relative flex m-0 bg-center bg-no-repeat"
+    className=" card relative flex m-0 bg-center bg-no-repeat"
   >
     <div
       className={`${
@@ -15,7 +15,7 @@ export const FrontID = ({ details }: { details: StudentDetails }) => (
     </div>
 
     <div className="z-50 flex-1 text-xs font-bold">
-      <h1 className="text-variant font-serif text-base text-center">
+      <h1 className="font-serif text-base text-center text-green-700">
         EDO UNIVERSITY IYAMHO
       </h1>
 
@@ -24,10 +24,10 @@ export const FrontID = ({ details }: { details: StudentDetails }) => (
         Student Identity Card
       </p>
 
-      <p className="text-xxxs w-24 mt-3 mb-1 ml-2 font-bold leading-none text-center text-blue-800">
-        ID No: <br /> EUI-101012
+      <p className="text-xxxs w-20 mt-3 mb-1 ml-2 font-black leading-none text-center text-blue-800">
+        ID No: <br /> EUI-STUD{Math.floor(Math.random() * 9999)}
       </p>
-      <div className=" flex items-center">
+      <div className="flex">
         <div className=" ml-2 leading-none">
           <div
             id="passport-container"
@@ -47,7 +47,7 @@ export const FrontID = ({ details }: { details: StudentDetails }) => (
             }`}
           />
           <p className="text-xxs mt-1 mr-5 text-right text-red-700">
-            Valid till May 1st. {new Date().getFullYear() + 1}
+            Valid till May 1<sup>st</sup>. {new Date().getFullYear() + 1}
           </p>
         </div>
       </div>

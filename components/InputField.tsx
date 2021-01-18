@@ -16,6 +16,13 @@ export const InputField = ({
     <label className="inline-block mb-1 text-gray-600" htmlFor={id}>
       {label}
     </label>
-    <input value={value} className="input" type="text" id={id} {...others} />
+    <input
+      required
+      value={value}
+      className="input"
+      type="text"
+      id={id}
+      {...others}
+    />
   </div>
 );

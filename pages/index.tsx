@@ -2,9 +2,10 @@ import { Header } from "../components/Header";
 import { BackID } from "../components/BackID";
 import { FrontID } from "../components/FrontID";
 import { Footer } from "../components/Footer";
-import { createCard } from "../createCard";
 import { useState } from "react";
 import { InputField } from "../components/InputField";
+
+import { createCards } from "../createCard";
 
 export default function Home() {
   const [form, setForm] = useState({
@@ -16,6 +17,7 @@ export default function Home() {
     full: false,
   });
   const [loading, setLoading] = useState(false);
+  const [canGenerate, setCanGenerate] = useState(false);
 
   const handleGenerate = async () => {
     setLoading(true);
@@ -23,9 +25,7 @@ export default function Home() {
       ".card"
     ) as NodeListOf<HTMLDivElement>;
 
-    cards.forEach(async (card, idx) => {
-      await createCard(card, `EUI ID ${idx === 0 ? "front" : "back"}`);
-    });
+    await createCards(cards);
 
     setLoading(false);
   };
@@ -61,7 +61,13 @@ export default function Home() {
     <>
       <Header />
       <div className="px-5">
-        <form className="max-w-lg px-4 py-3 mx-auto mt-5 mb-20 border rounded-md">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleGenerate();
+          }}
+          className="max-w-lg px-4 py-3 mx-auto mt-5 mb-20 border rounded-md"
+        >
           <h1 className="text-center">Fill up to generate ID</h1>
           <InputField
             id="name"
@@ -120,9 +126,11 @@ export default function Home() {
             </label>
           </span>
           <button
-            type="button"
+            type="submit"
+            // disabled={!canGenerate}
+
             onClick={handleGenerate}
-            className="w-36 hover:bg-blue-700 block p-2 mx-auto mt-10 mb-4 text-center text-white duration-300 bg-blue-600 rounded-md"
+            className="disabled:bg-gray-700 disabled:cursor-not-allowed hover:bg-blue-700 block w-40 p-2 mx-auto mt-10 mb-4 text-center text-white duration-300 bg-blue-600 rounded-md"
           >
             {loading ? "Generating... 😴😴" : "Generate"}
           </button>
