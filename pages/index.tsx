@@ -49,7 +49,7 @@ export default function Home() {
       const image = document.createElement("img");
 
       image.src = reader.result as string;
-      image.classList.add("object-cover", "w-ful", "h-full");
+      image.classList.add("object-cover", "w-full", "h-full");
       image.alt = "passport";
 
       imageContainer.appendChild(image);
