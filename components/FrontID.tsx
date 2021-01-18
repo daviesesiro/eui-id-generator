@@ -29,11 +29,15 @@ export const FrontID = ({ details }: { details: StudentDetails }) => (
       </p>
       <div className=" flex items-center">
         <div className=" ml-2 leading-none">
-          <div className="w-20 h-20 bg-red-500"></div>
+          <div
+            id="passport-container"
+            className="w-20 h-20 bg-red-500 bg-center bg-cover"
+          ></div>
         </div>
         <div className="flex-1 w-full h-full ml-2">
           <Detail title="Name" value={details.name.toUpperCase()} />
           <Detail title="Faculty" value={details.faculty} />
+          <Detail title="Dept" value={details.department} />
           <Detail title="Mat No" value={details.matno} />
           <Detail title="Level" value={details.level} />
           <Detail
@@ -60,7 +64,9 @@ const Detail = ({ title, value }: { title: string; value: string }) => (
 export type StudentDetails = {
   name: string;
   faculty: string;
+  department: string;
   matno: string;
   level: string;
+
   full: boolean;
 };

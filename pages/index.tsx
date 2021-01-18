@@ -36,6 +36,27 @@ export default function Home() {
       return setForm((old) => ({ ...old, [id]: checked }));
     setForm((old) => ({ ...old, [id]: value }));
   };
+
+  const handlePassport = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      const imageContainer = document.getElementById("passport-container");
+      if (imageContainer.firstChild)
+        imageContainer.removeChild(imageContainer.firstChild);
+
+      const image = document.createElement("img");
+
+      image.src = reader.result as string;
+      image.classList.add("object-cover", "w-ful", "h-full");
+      image.alt = "passport";
+
+      imageContainer.appendChild(image);
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
+  };
   return (
     <>
       <Header />
@@ -81,7 +102,12 @@ export default function Home() {
               placeholder="100l"
             />
           </div>
-          <input className="mt-5" type="file" accept="image/png, image/jpeg" />
+          <input
+            className="mt-5"
+            type="file"
+            accept="image/png, image/jpeg"
+            onChange={handlePassport}
+          />
           <span>
             <input
               type="checkbox"
@@ -98,7 +124,7 @@ export default function Home() {
             onClick={handleGenerate}
             className="w-36 hover:bg-blue-700 block p-2 mx-auto mt-10 mb-4 text-center text-white duration-300 bg-blue-600 rounded-md"
           >
-            {loading ? "Gnerating... 😴😴" : "Generate"}
+            {loading ? "Generating... 😴😴" : "Generate"}
           </button>
         </form>
         <h1 className="mb-8 text-2xl text-center">Preview ID Card😜 </h1>
