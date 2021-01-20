@@ -7,8 +7,8 @@ export const InputField = ({
 }: {
   [key: string]: any;
   className?: string;
-  placeholder: string;
-  value: string;
+  placeholder?: string;
+  value?: string;
   label: string;
   id: string;
 }) => (
