@@ -2,7 +2,7 @@
 @tailwind components;
 
 .card{
-    @apply w-card h-card duration-200 transform border-2 rounded-md cursor-pointer;
+    @apply w-small-card h-small-card sm:w-card sm:rounded-lg sm:h-card duration-200 transform border-2 rounded-md;
     @apply hover:shadow-lg hover:-translate-y-3 hover:scale-105
 }
 
